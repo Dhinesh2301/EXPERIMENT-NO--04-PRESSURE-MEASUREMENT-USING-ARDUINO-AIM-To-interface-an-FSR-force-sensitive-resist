@@ -1,4 +1,8 @@
 # EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
+### NAME:DHINESH R
+### ROLLNO :212223220019
+### DEPT:IT
+### DATE:11.3.2024
 
 
 ## AIM: 
@@ -78,7 +82,34 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 ### PROGRAM 
  *your roll no 
  * your name 
- * department and year 
+ * department and year
+   '''int LED=7;
+int FSR;
+void setup()
+{
+ pinMode(LED,OUTPUT);
+ Serial.begin(9600);
+}
+
+void loop()
+{
+ FSR = analogRead(A0);
+ Serial.print("Raw value=");
+ Serial.println(FSR);
+ delay(500);
+ int m;
+ m=map(FSR,0,159,0,10);
+ Serial.print("Mapped value=");
+ Serial.print(m);
+ if(FSR>50)
+ {
+   digitalWrite(LED,LOW);
+   delay(500);
+   digitalWrite(LED,HIGH);
+   delay(500);
+ }
+}'''
+
  
  
  
@@ -95,10 +126,14 @@ The easiest way to measure a resistive sensor is to connect one end to power and
  
  
 
-![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
 
 
 ### TABLE -02 standard deviation table 
+![WhatsApp Image 2024-03-11 at 10 00 47_36dfbc88](https://github.com/Dhinesh2301/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/2910bda4-7ec6-43b0-a343-2c59673e703d)
+### GRAPH
+![WhatsApp Image 2024-03-11 at 10 00 58_352d0e41](https://github.com/Dhinesh2301/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/53c9ddac-3c89-412a-be49-9866efff0142)
+
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
@@ -114,6 +149,15 @@ For those unfamiliar with summation notation, the equation above may seem daunti
 EX:           μ = (1+3+4+7+8) / 5 = 4.6        
 σ = √[(1 - 4.6)2 + (3 - 4.6)2 + ... + (8 - 4.6)2)]/5
 σ = √(12.96 + 2.56 + 0.36 + 5.76 + 11.56)/5 = 2.577
+
+### ON CONDITION
+![WhatsApp Image 2024-03-11 at 10 12 31_ed16a74a](https://github.com/Dhinesh2301/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/9c7c4f98-fa48-4474-9668-ad02d9a02b20)
+### OFF CONDITION
+![WhatsApp Image 2024-03-11 at 10 12 33_39ca4377](https://github.com/Dhinesh2301/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/ea23b465-7612-4059-af24-4647c6d237b2)
+
+
+### SCHEMATIC REPRESENTATION
+![WhatsApp Image 2024-03-11 at 10 03 34_7e264203](https://github.com/Dhinesh2301/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/3d3e631f-295d-40d5-882b-30c436280824)
 
 
 
