@@ -1,9 +1,9 @@
 # EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
 
-# DATE :
-# NAME :
-# ROLLNUMBER :
-# DEPARTMENT
+# DATE :6.3.2024
+# NAME :DHINESH R
+# ROLLNUMBER :212223220019
+# DEPARTMENT:IT
 ## AIM: 
 To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
  
@@ -65,6 +65,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 
+
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
 2.	Connect the board to your computer via the USB cable.
@@ -82,7 +83,33 @@ The easiest way to measure a resistive sensor is to connect one end to power and
  *your roll no 
  * your name 
  * department and year 
- 
+ '''
+int LED=7;
+int FSR;
+void setup()
+{
+ pinMode(LED,OUTPUT);
+ Serial.begin(9600);
+}
+
+void loop()
+{
+ FSR = analogRead(A0);
+ Serial.print("Raw value=");
+ Serial.println(FSR);
+ delay(500);
+ int m;
+ m=map(FSR,0,159,0,10);
+ Serial.print("Mapped value=");
+ Serial.print(m);
+ if(FSR>50)
+ {
+   digitalWrite(LED,LOW);
+   delay(500);
+   digitalWrite(LED,HIGH);
+   delay(500);
+ }
+}'''
  
  
  
@@ -98,10 +125,15 @@ The easiest way to measure a resistive sensor is to connect one end to power and
  
  
 
-![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
+
 
 
 ### TABLE -02 standard deviation table 
+![WhatsApp Image 2024-03-11 at 10 00 47_7ea89d87](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/18315136-5677-4079-bd59-774eec6c74cc)
+### GRAPH
+![WhatsApp Image 2024-03-11 at 10 00 58_5e6c2feb](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/a987b798-4c70-4ee8-a852-0e2e02a38d64)
+
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
@@ -119,8 +151,14 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 σ = √(12.96 + 2.56 + 0.36 + 5.76 + 11.56)/5 = 2.577
 
 
+### on condition
+![WhatsApp Image 2024-03-11 at 10 12 31_3ddf772b](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/e51cf114-f9a6-4c53-bc93-09e3e1715dfd)
+### off condition
+![WhatsApp Image 2024-03-11 at 10 12 33_8a4c865f](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/43426be3-2d99-4227-927b-86aeea378668)
 
 
+### schematic representation
+![WhatsApp Image 2024-03-11 at 10 03 34_f2acf53c](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151379545/f6471d4b-1fd5-4582-ad02-d74dccd4862b)
 
 
 
